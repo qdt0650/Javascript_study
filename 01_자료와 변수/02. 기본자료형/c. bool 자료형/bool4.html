@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // &&(and) 둘 다 같아야 true
+         console.log(10 <= 12 && 5 < 8)
+         console.log(10 <= 12 && 5 > 8)
+         console.log(10 > 12 && 5 < 8)
+         console.log(10 > 12 && 5 > 8)
+
+         console.log('')
+
+         // ||(or) 하나만 true 여도 true
+         console.log(10 <= 12 || 5 < 8)
+         console.log(10 <= 12 || 5 > 8)
+         console.log(10 > 12 || 5 < 8)
+         console.log(10 > 12 || 5 > 8)
+
+         console.log('')
+
+         // true
+         console.log(10 <= 12 || (5 < 8 && 10 < 1))
+      </script>
+   </body>
+</html>
