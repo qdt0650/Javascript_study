@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const num = 2.1234
+
+         const maxNum = Math.max(10, 5, 8, 30)
+         const minNum = Math.min(10, 5, 8, 30)
+         const roundNum = Math.round(num) // 반올림
+         const floorNum = Math.floor(num) // 내림
+         const ceilNum = Math.ceil(num) // 올림
+         const randomNum = Math.random() // 0 ~ 1사이의 랜덤한 숫자
+
+         // Math.floor(Math.random()*(최댓값-최솟값+1)) + 최솟값;
+         // 1 ~ 10까지의 랜덤한 정수
+         const random = Math.floor(Math.random() * (10 - 1 + 1)) + 1
+
+         document.write(random, '<br>')
+         document.write(maxNum, '<br>')
+         document.write(minNum, '<br>')
+         document.write(roundNum, '<br>')
+         document.write(floorNum, '<br>')
+         document.write(ceilNum, '<br>')
+         document.write(randomNum, '<br>')
+      </script>
+   </body>
+</html>
