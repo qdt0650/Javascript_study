@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <h1></h1>
+      <script>
+         const print = (event) => {
+            console.log(event.altKey)
+            console.log(event.ctrlKey)
+            console.log(event.shiftKey)
+            console.log(event.code)
+            console.log(event.keyCode)
+         }
+
+         // 문서 전체에 이벤트를 걸었다
+         document.addEventListener('keydown', print)
+         //  document.addEventListener('keyup', print)
+      </script>
+   </body>
+</html>
