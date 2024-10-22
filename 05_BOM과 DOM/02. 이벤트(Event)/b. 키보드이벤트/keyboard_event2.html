@@ -9,11 +9,13 @@
       <h1></h1>
       <script>
          const print = (event) => {
-            console.log(event.altKey)
-            console.log(event.ctrlKey)
-            console.log(event.shiftKey)
-            console.log(event.code)
-            console.log(event.keyCode)
+            console.log(event) // 이벤트 객체 : 이벤트가 발생했을때 이벤트가 발생한 요소에 대한 정보가 들어있다.
+            console.log(event.altKey) // alt 키를 눌렀을때 true
+            console.log(event.ctrlKey) // ctrl 키를 눌렀을때 true
+            console.log(event.shiftKey) // shift 키를 눌렀을때 true
+            console.log(event.code) // 키보드 값을 위치랑 같이 준다
+            // console.log(event.keyCode) 실행x, 사용x
+            console.log(event.key) // 키보드 값 자체를 준다
          }
 
          // 문서 전체에 이벤트를 걸었다
