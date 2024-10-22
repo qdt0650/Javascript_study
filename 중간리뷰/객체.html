@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         let dog = {
+            name: '흰둥이',
+            owner: '신짱구',
+            age: 1,
+            family: ['신짱구', '신짱아', '봉미선', '신형만'],
+            walk: () => {
+               console.log(dog.name + '는 산책 중입니다.')
+            },
+         }
+
+         //  console.log(dog['name'])
+         console.log(dog.name)
+         dog.name = '검둥이'
+         dog.walk()
+
+         dog.date = '24/10/22' // 추가
+
+         delete dog.name // 삭제
+         console.log(dog)
+      </script>
+   </body>
+</html>
