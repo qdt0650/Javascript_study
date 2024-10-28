@@ -11,7 +11,7 @@ const tvId = urlParams.get('tv_id')
 
 const tvDetailUrl = `https://api.themoviedb.org/3/tv/${tvId}?language=ko-KR`
 
-const subContainer = document.querySelector('main .sub_container')
+const subContainer = document.querySelector('main .sub_container_detail')
 
 const getDetailTv = async (tvDetailUrl) => {
    try {
@@ -22,10 +22,20 @@ const getDetailTv = async (tvDetailUrl) => {
 
       const imgSrc = `https://image.tmdb.org/t/p/w300${data.poster_path}`
 
-      const langs = (data) => {
-         const langsTxt = ''
+      let langs = (data) => {
+         let langsTxt = ''
          if (data.original_language === 'en') {
-            const langsTxt = '영어'
+            return '영어'
+         } else if (data.original_language === 'de') {
+            return '독일어'
+         } else if (data.original_language === 'es') {
+            return '스페인어'
+         } else if (data.original_language === 'ar') {
+            return '아르헨티나'
+         } else if (data.original_language === 'fr') {
+            return '프랑스어'
+         } else if (data.original_language === 'nl') {
+            return '네델란드어'
          }
       }
       const rowHtml = `<div class="row">
@@ -36,7 +46,7 @@ const getDetailTv = async (tvDetailUrl) => {
                                 <h2>${data.name} (${data.first_air_date.substring(0, 4)})</h2>
                                 <br />
                                 <ul class="movie-info">
-                                    <li>원제 ${data.original_name}, ${data.langs}</li>
+                                    <li>원제 ${data.original_name}, ${langs(data)}</li>
                                     <li>평점 ${data.vote_average.toFixed(1)}점</li>
                                     <li>최근방영일 ${data.last_air_date}</li>
                                     <li>처음방영일 ${data.first_air_date}</li>
@@ -45,12 +55,14 @@ const getDetailTv = async (tvDetailUrl) => {
                                 <p>줄거리<br />${data.overview}</p>
                             </div>
                         </div>
-                        <div>
+                        <div class="seasons_list">
                            ${data.seasons
                               .map((season, i) => {
-                                 return ` <div>
-                                    <p>${season.name} 평점(${season.vote_average.toFixed(1)})보러가기 - ${season.air_date} 방영</p>
-                                 </div>`
+                                 return ` 
+                                    <p>
+                                       <i>• ${season.name}</i> 평점(${season.vote_average.toFixed(1)})보러가기 ${season.air_date} 방영
+                                    </p>
+                                 `
                               })
                               .join('')}
                         </div>

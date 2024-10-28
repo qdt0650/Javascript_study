@@ -102,6 +102,29 @@ main .container ul.movie-info li {
    -webkit-box-orient: vertical;
 }
 
+/* sub_datail.html */
+.sub_container_detail {
+   width: 100%;
+   max-width: 1270px;
+   margin: 0 auto;
+   padding: 40px 10px;
+   display: flex;
+   flex-direction: column;
+}
+.sub_container_detail .seasons_list {
+   margin-top: 40px;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+}
+.sub_container_detail .seasons_list p {
+   width: 33.333%;
+}
+.sub_container_detail .seasons_list p i {
+   font-style: normal;
+   font-weight: 700;
+}
+
 /* footer */
 footer {
    height: 100px;
@@ -110,6 +133,12 @@ footer {
 }
 
 /* 반응형 UI 문제 해결 */
+@media (max-width: 1024px) {
+   .sub_container_detail .seasons_list p {
+      width: 50%;
+   }
+}
+
 @media (min-width: 576px) and (max-width: 767px) {
    .col-sm-9 {
       width: 60%;
@@ -131,5 +160,9 @@ footer {
    }
    .tv_row .card-text.txt {
       display: block !important;
+   }
+
+   .sub_container_detail .seasons_list p {
+      width: 100%;
    }
 }
