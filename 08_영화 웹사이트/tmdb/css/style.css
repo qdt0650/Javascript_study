@@ -67,7 +67,7 @@ main .container ul.movie-info li {
 }
 .tv_row {
    width: 49%;
-   height: 560px;
+   height: 100%;
    margin: 0;
    margin-bottom: 35px;
 }
@@ -154,12 +154,18 @@ footer {
    main .container ul.movie-info li {
       padding-bottom: 10px;
    }
+}
+
+@media (max-width: 767px) {
    .tv_row {
       width: 100%;
-      height: 100%;
    }
    .tv_row .card-text.txt {
-      display: block !important;
+      -webkit-line-clamp: 8;
+   }
+
+   .tv_row .card-text.txt {
+      font-size: 13px;
    }
 
    .sub_container_detail .seasons_list p {
